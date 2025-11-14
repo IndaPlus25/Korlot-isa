@@ -1,0 +1,28 @@
+madd a5 0 5                 -startvalue
+madd a4 0 1                 -start fac
+madd a1 0 0                 -set a1 to 0
+madd a0 a5 0                -store currrent value from start value
+
+lgrt jjt1 a5 0              -if startvalue greater then 1 start calculating
+
+sprt a4                     -print 1
+sbrk                        -quit
+
+ra1
+scpy a3 a0                  -copy current value to a3
+msub a1 a1 a1               -Put a1 at 0
+
+ra2
+scpy a2 a4                  -copy fac to register a2
+madd a1 a1 a2               -add copied fac and a1 to a1 
+msub a3 a3 1                -decrease current copied value of startvalue
+lgrt jjt2 a3 0              -repeat if current copied value isn't 0
+
+msub a5 a5 1                -decrease startvalue
+madd a4 a4 1                -increase fac
+scpy a0 a1                  -make current value the sum from the loop
+
+lgrt jjt1 a5 0              -startvalue greater then 0, repeat
+
+sprt a0                     -print current value
+sbrk 

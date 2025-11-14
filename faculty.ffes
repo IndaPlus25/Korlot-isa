@@ -1,0 +1,28 @@
+madd a5 0 5
+madd a4 0 1
+madd a1 0 0
+madd a0 a5 0
+
+lgrt jjt1 a5 0
+
+sprt a4
+sbrk
+
+ra1
+scpy a3 a0
+msub a1 a1 a1
+
+ra2
+scpy a2 a4
+madd a1 a1 a2
+msub a3 a3 1
+lgrt jjt2 a3 0
+
+msub a5 a5 1
+madd a4 a4 1
+scpy a0 a1
+
+lgrt jjt1 a5 0
+
+sprt a0
+sbrk
